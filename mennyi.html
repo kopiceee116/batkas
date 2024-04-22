@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mennyire tanuljak batkara</title>
+</head>
+<body>
+    <style>
+     td{
+        border: solid 1px black;
+    }
+    table, input,p,button{width: 100%; text-align: center;}
+    @media (min-width: 430px) {*{width: 50%;} td{max-width: 20%;}
+}</style>
+    <p>átlagod (tizedesnél PONT legyen)</p>
+    <input type="text" name="atlag" id="atlag">
+    <p><button onclick="beszed()">szamolj</button></p>
+    <table>
+        <tr>
+            <td>1es</td>
+            <td>2es</td>
+            <td>3as</td>
+            <td>4es</td>
+            <td>5os</td>
+        </tr>
+        <tr>
+            <td id="1es"></td>
+            <td id="2es"></td>
+            <td id="3as"></td>
+            <td id="4es"></td>
+            <td id="5os"></td>
+        </tr>
+    </table>
+    <script>
+        function beszed(){
+            atlag = document.getElementById("atlag").value
+            console.log(atlag)
+            negyszeratlag = parseFloat(atlag)*4
+            console.log(negyszeratlag)
+            document.getElementById("1es").innerHTML = String((negyszeratlag+1)/5)
+            document.getElementById("2es").innerHTML = String((negyszeratlag+2)/5)
+            document.getElementById("3as").innerHTML = String((negyszeratlag+3)/5)
+            document.getElementById("4es").innerHTML = String((negyszeratlag+4)/5)
+            document.getElementById("5os").innerHTML = String((negyszeratlag+5)/5)
+        }
+    </script>
+</body>
+</html>
