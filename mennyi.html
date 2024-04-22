@@ -35,15 +35,18 @@
     <script>
         function beszed(){
             atlag = document.getElementById("atlag").value
+            if (atlag){ //levente
             console.log(atlag)
-            negyszeratlag = parseFloat(atlag)*4
+            finomabb = atlag.replace(/[^.\d]/g, ''); //levente
+            if(!isNaN(parseFloat(finomabb))){ //levente
+            negyszeratlag = parseFloat(finomabb)*4
             console.log(negyszeratlag)
-            document.getElementById("1es").innerHTML = String((negyszeratlag+1)/5)
-            document.getElementById("2es").innerHTML = String((negyszeratlag+2)/5)
-            document.getElementById("3as").innerHTML = String((negyszeratlag+3)/5)
-            document.getElementById("4es").innerHTML = String((negyszeratlag+4)/5)
-            document.getElementById("5os").innerHTML = String((negyszeratlag+5)/5)
-        }
+            document.getElementById("1es").innerHTML = String(((negyszeratlag+1)/5).toFixed(2))
+            document.getElementById("2es").innerHTML = String(((negyszeratlag+2)/5).toFixed(2))
+            document.getElementById("3as").innerHTML = String(((negyszeratlag+3)/5).toFixed(2))
+            document.getElementById("4es").innerHTML = String(((negyszeratlag+4)/5).toFixed(2))
+            document.getElementById("5os").innerHTML = String(((negyszeratlag+5)/5).toFixed(2))
+            }}} //tofixed LEVENTE igy jo most jo ???? ?? ? ?  ?? 
     </script>
 </body>
 </html>
